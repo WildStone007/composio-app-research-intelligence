@@ -1,26 +1,37 @@
 # Composio App Research Intelligence
 
-An automated research pipeline evaluating 100 applications for AI agent toolkit integration.
+An automated research pipeline exploring the integration potential of 100 applications for AI agent toolkits.
+
+## Live Demo
+
+**Dashboard:** https://composio-app-research-intelligence.vercel.app/
+
+**Source Code:** https://github.com/WildStone007/composio-app-research-intelligence
 
 ## Overview
 
-The project researches:
+This project investigates 100 applications across 10 categories to understand their suitability for AI agent integrations.
+
+The research covers:
+
 - Application categories and descriptions
 - Authentication methods
 - Developer access and credential requirements
 - REST and GraphQL API signals
 - MCP availability signals
-- Integration buildability and blockers
+- Integration buildability and potential blockers
 - Documentation and evidence URLs
 
-## Architecture
+## Architecture and Workflow
 
-1. Application dataset: 100 applications across 10 categories.
-2. Discovery: DuckDuckGo search through the DDGS Python library.
-3. Extraction: Python rule-based classification.
-4. Storage: JSON research records.
-5. Verification: Official documentation source checks and human-review flags.
-6. Presentation: Interactive HTML research dashboard.
+1. **Application dataset:** 100 applications across 10 categories.
+2. **Discovery:** DuckDuckGo searches using the DDGS Python library.
+3. **Extraction:** Python-based rule-driven classification of search results.
+4. **Storage:** Research records saved as JSON.
+5. **Verification:** Official documentation URL reachability checks and sample-based comparison.
+6. **Presentation:** Interactive HTML research dashboard.
+
+Human review remains necessary for ambiguous or unsupported findings.
 
 ## Project Structure
 
@@ -45,49 +56,60 @@ composio-research-agent/
 ## Setup
 
 ```bash
-git clone YOUR_REPOSITORY_URL
-cd composio-research-agent
+git clone https://github.com/WildStone007/composio-app-research-intelligence.git
+cd composio-app-research-intelligence
+
 python3 -m venv .venv
 source .venv/bin/activate
+
 pip install -r requirements.txt
 ```
 
-## Run Research
+## Run the Research Pipeline
 
 ```bash
 python src/research.py
 ```
 
-Resume or research a limited batch:
+To research a limited batch:
 
 ```bash
 python src/research.py --limit 10
 ```
 
-## Generate Dashboard
+The pipeline saves research records in `output/research.json` and supports resuming an existing run.
+
+## Generate the Dashboard
 
 ```bash
 python src/dashboard.py
 open output/index.html
 ```
 
-## Verification
+## Verification Results
 
-```bash
-python src/verification.py
-python src/source_check.py
-```
+A six-application sample was compared against expected authentication signals.
 
-Search evidence and HTTP reachability are not equivalent to factual verification. Human review is required before treating findings as confirmed.
+- Sample size: 6 applications
+- Authentication signal overlaps: 3
+- Non-overlaps: 3
+- Signal overlap rate: 50%
 
-## Limitations
+This is a keyword-signal overlap rate, **not an overall accuracy score**.
+
+The source-check script tested 12 documentation URLs, of which 12 responded successfully to HTTP checks. Reachability does not establish that the page content is accurate or that an integration is available.
+
+## Findings and Limitations
+
+The research run returned at least one search result for 93 of the 100 applications. These are discovery results, not 93 verified integrations.
 
 - Search results can be incomplete or outdated.
 - Authentication extraction is keyword-based.
 - API breadth and buildability require deeper documentation review.
-- MCP mentions are not proof of official or functional MCP support.
-- No overall accuracy percentage is claimed.
-- The current research engine does not execute API calls against all 100 applications.
+- MCP mentions do not prove official or functional MCP support.
+- All application records remain flagged for human review.
+- The pipeline does not execute API calls against all 100 applications.
+- This version uses a Python rule-based research pipeline; it does not implement a Composio-powered agent or MCP execution workflow.
 
 ## Cost
 
@@ -95,4 +117,4 @@ The current research pipeline does not require OpenAI API credits. It uses publi
 
 ## Outputs
 
-The generated dashboard is available at `output/index.html`.
+The primary output is the interactive dashboard at `output/index.html`, with supporting research and verification data in the `output/` directory.
