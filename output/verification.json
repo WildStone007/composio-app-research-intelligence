@@ -1,0 +1,246 @@
+{
+  "audit_type": "Manual official-source review plus automated signal comparison",
+  "sample_size": 6,
+  "auth_signal_overlaps": 3,
+  "auth_signal_non_overlaps": 3,
+  "overlap_rate": 50.0,
+  "accuracy_claimed": false,
+  "records": [
+    {
+      "app": "Google Ads",
+      "expected_auth": [
+        "OAuth2"
+      ],
+      "expected_api": "REST",
+      "finding": "OAuth 2.0 plus a developer access model undergoing transition.",
+      "source": "https://developers.google.com/google-ads/api/rest/auth",
+      "secondary": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+      "agent_auth": [
+        "unknown"
+      ],
+      "agent_api": "unknown",
+      "agent_status": "needs_review",
+      "agent_evidence_count": 0,
+      "auth_signal_overlap": false,
+      "human_source_review": "Reviewed against the listed official documentation",
+      "limitations": "This is an authentication keyword-overlap check, not a full factual accuracy score."
+    },
+    {
+      "app": "Zendesk",
+      "expected_auth": [
+        "OAuth2",
+        "Basic",
+        "API token"
+      ],
+      "expected_api": "REST",
+      "finding": "OAuth is recommended; legacy API-token and Basic authentication have migration considerations.",
+      "source": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+      "secondary": "https://developer.zendesk.com/documentation/authentication/api-tokens-to-oauth/",
+      "agent_auth": [
+        "OAuth2",
+        "API key",
+        "Basic",
+        "Bearer/token"
+      ],
+      "agent_api": "unknown",
+      "agent_status": "researched",
+      "agent_evidence_count": 10,
+      "auth_signal_overlap": true,
+      "human_source_review": "Reviewed against the listed official documentation",
+      "limitations": "This is an authentication keyword-overlap check, not a full factual accuracy score."
+    },
+    {
+      "app": "Shopify",
+      "expected_auth": [
+        "Access token"
+      ],
+      "expected_api": "REST and GraphQL",
+      "finding": "Scoped access tokens authenticate API requests. REST Admin API is legacy; GraphQL is the preferred direction.",
+      "source": "https://shopify.dev/docs/api/usage/authentication",
+      "secondary": "https://shopify.dev/docs/api/admin-graphql",
+      "agent_auth": [
+        "unknown"
+      ],
+      "agent_api": "unknown",
+      "agent_status": "needs_review",
+      "agent_evidence_count": 0,
+      "auth_signal_overlap": false,
+      "human_source_review": "Reviewed against the listed official documentation",
+      "limitations": "This is an authentication keyword-overlap check, not a full factual accuracy score."
+    },
+    {
+      "app": "Apify",
+      "expected_auth": [
+        "API token"
+      ],
+      "expected_api": "REST",
+      "finding": "Public REST API with secret API-token authentication.",
+      "source": "https://docs.apify.com/integrations/api",
+      "secondary": "https://docs.apify.com/api/v2",
+      "agent_auth": [
+        "OAuth2",
+        "API key",
+        "Bearer/token"
+      ],
+      "agent_api": "REST",
+      "agent_status": "researched",
+      "agent_evidence_count": 9,
+      "auth_signal_overlap": true,
+      "human_source_review": "Reviewed against the listed official documentation",
+      "limitations": "This is an authentication keyword-overlap check, not a full factual accuracy score."
+    },
+    {
+      "app": "Notion",
+      "expected_auth": [
+        "API token",
+        "OAuth2"
+      ],
+      "expected_api": "REST",
+      "finding": "Internal connections use API tokens; external integrations can use OAuth. Workspace permissions affect access.",
+      "source": "https://www.notion.com/help/create-integrations-with-the-notion-api",
+      "secondary": "https://developers.notion.com/reference/intro",
+      "agent_auth": [
+        "unknown"
+      ],
+      "agent_api": "unknown",
+      "agent_status": "needs_review",
+      "agent_evidence_count": 0,
+      "auth_signal_overlap": false,
+      "human_source_review": "Reviewed against the listed official documentation",
+      "limitations": "This is an authentication keyword-overlap check, not a full factual accuracy score."
+    },
+    {
+      "app": "Plaid",
+      "expected_auth": [
+        "Client ID",
+        "Secret",
+        "Access token"
+      ],
+      "expected_api": "REST",
+      "finding": "Client ID and secret identify the developer application; access tokens authorize access to linked Items.",
+      "source": "https://plaid.com/docs/quickstart/",
+      "secondary": "https://plaid.com/docs/api/",
+      "agent_auth": [
+        "OAuth2",
+        "API key",
+        "Bearer/token"
+      ],
+      "agent_api": "unknown",
+      "agent_status": "researched",
+      "agent_evidence_count": 8,
+      "auth_signal_overlap": true,
+      "human_source_review": "Reviewed against the listed official documentation",
+      "limitations": "This is an authentication keyword-overlap check, not a full factual accuracy score."
+    }
+  ],
+  "url_reachability_check": [
+    {
+      "app": "Google Ads",
+      "sources": [
+        {
+          "url": "https://developers.google.com/google-ads/api/rest/auth",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        },
+        {
+          "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        }
+      ]
+    },
+    {
+      "app": "Zendesk",
+      "sources": [
+        {
+          "url": "https://developer.zendesk.com/api-reference/introduction/security-and-auth/",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        },
+        {
+          "url": "https://developer.zendesk.com/documentation/authentication/api-tokens-to-oauth/",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        }
+      ]
+    },
+    {
+      "app": "Shopify",
+      "sources": [
+        {
+          "url": "https://shopify.dev/docs/api/usage/authentication",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        },
+        {
+          "url": "https://shopify.dev/docs/api/admin-graphql",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        }
+      ]
+    },
+    {
+      "app": "Apify",
+      "sources": [
+        {
+          "url": "https://docs.apify.com/integrations/api",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        },
+        {
+          "url": "https://docs.apify.com/api/v2",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        }
+      ]
+    },
+    {
+      "app": "Notion",
+      "sources": [
+        {
+          "url": "https://www.notion.com/help/create-integrations-with-the-notion-api",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        },
+        {
+          "url": "https://developers.notion.com/reference/intro",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        }
+      ]
+    },
+    {
+      "app": "Plaid",
+      "sources": [
+        {
+          "url": "https://plaid.com/docs/quickstart/",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        },
+        {
+          "url": "https://plaid.com/docs/api/",
+          "http_status": 200,
+          "reachable": true,
+          "title_present": true
+        }
+      ]
+    }
+  ],
+  "url_reachability_summary": {
+    "total_urls": 12,
+    "reachable": 12,
+    "failed": 0
+  },
+  "human_source_review": "Official documentation URLs selected for checking; HTTP reachability checked automatically. Manual content verification remains outstanding."
+}

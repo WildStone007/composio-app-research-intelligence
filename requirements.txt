@@ -1,0 +1,11 @@
+openai
+python-dotenv
+ddgs
+requests
+beautifulsoup4
+pandas
+streamlit
+plotly
+tqdm
+pydantic
+composio
