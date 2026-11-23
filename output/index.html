@@ -42,7 +42,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:20px;color:v
 <header>
 <div class="eyebrow">INTEGRATION INTELLIGENCE / RESEARCH CASE STUDY</div>
 <h1>Can this app become an <span class="green">AI agent toolkit?</span></h1>
-<p class="sub">A documentation-first research pipeline evaluating authentication, developer access, API surface, MCP availability and integration buildability across a 90-app research set.</p>
+<p class="sub">A documentation-first research pipeline evaluating authentication, developer access, API surface, MCP availability and integration buildability across a 100-app research set.</p>
 <span class="tag">AUTOMATED DISCOVERY</span> <span class="tag">EVIDENCE-LINKED</span> <span class="tag">HUMAN REVIEW REQUIRED</span>
 </header>
 <section class="metrics" id="metrics"></section>
@@ -137,5 +137,5 @@ document.getElementById("rows").innerHTML=filtered.map(x=>`<tr>
 }
 ["search","category","status"].forEach(id=>document.getElementById(id).addEventListener(id==="search"?"input":"change",render));
 render();
-document.getElementById("limitations").textContent=`${found} applications returned search evidence; ${empty} returned none. All ${count} records are flagged for human review. The current dataset contains ${count} applications, not the requested 100.`;
+document.getElementById("limitations").textContent=`${found} applications returned search evidence; ${empty} returned none. All ${count} records are flagged for human review. The dataset contains ${count} applications; the requested research scope is 100 apps.`;
 </script></body></html>
